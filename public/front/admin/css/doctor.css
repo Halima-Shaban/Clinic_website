@@ -1,0 +1,154 @@
+/* content-wrapper style */
+ .content-wrapper {
+            background: #f4f6f9;
+        }
+        .doctors-header {
+            background: white;
+            padding: 20px 30px;
+            border-bottom: 1px solid #dee2e6;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .doctors-title {
+            font-size: 24px;
+            font-weight: 500;
+            margin: 0;
+            color: #343a40;
+        }
+        .doctors-table-container {
+            background: white;
+            margin: 0 30px 30px 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 1px rgba(0,0,0,.125), 0 1px 3px rgba(0,0,0,.2);
+        }
+        .search-container {
+            padding: 20px 30px;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .search-box {
+            position: relative;
+            max-width: 400px;
+        }
+        .search-box input {
+            padding-right: 40px;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            height: 38px;
+        }
+        .search-box .search-icon {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6c757d;
+        }
+        .doctors-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .doctors-table th {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            text-align: left;
+            font-weight: 600;
+            color: #495057;
+            border-bottom: 1px solid #dee2e6;
+            font-size: 14px;
+        }
+        .doctors-table td {
+            padding: 15px 20px;
+            border-bottom: 1px solid #dee2e6;
+            vertical-align: middle;
+        }
+        .doctors-table tr:hover {
+            background: #f8f9fa;
+        }
+        .doctor-image {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .doctor-name {
+            font-weight: 500;
+            color: #495057;
+            font-size: 14px;
+        }
+        .doctor-major {
+            color: #6c757d;
+            font-size: 14px;
+        }
+        .doctor-phone {
+            color: #6c757d;
+            font-size: 14px;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 5px;
+        }
+        .action-btn {
+            width: 32px;
+            height: 32px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+        .btn-view {
+            background: #17a2b8;
+            color: white;
+        }
+        .btn-view:hover {
+            background: #138496;
+        }
+        .btn-edit {
+            background: #ffc107;
+            color: white;
+        }
+        .btn-edit:hover {
+            background: #e0a800;
+        }
+        .btn-delete {
+            background: #dc3545;
+            color: white;
+        }
+        .btn-delete:hover {
+            background: #c82333;
+        }
+        .new-doctor-btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .new-doctor-btn:hover {
+            background: #0056b3;
+        }
+        .id-column {
+            width: 60px;
+            text-align: center;
+            color: #6c757d;
+            font-weight: 500;
+        }
+        .image-column {
+            width: 80px;
+        }
+        .name-column {
+            width: 200px;
+        }
+        .major-column {
+            width: 220px;
+        }
+        .phone-column {
+            width: 150px;
+        }
+        .action-column {
+            width: 120px;
+        }

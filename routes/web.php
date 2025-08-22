@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('front.home');
-});
+})->name("home");
 
 Route::get('/majors', function () {
     return view('front.majors');
@@ -22,7 +22,8 @@ Route::prefix('auth')->controller(AuthControoller::class)->name('auth.')->group(
     Route::post('/login','login')->name("login.post");
     
     Route::get('/register','registerForm')->name("register");
+    Route::post('/logout','logout')->name("logout");
     Route::post('/register','register')->name("register.post");
 });
 
-
+require __DIR__.'/admin.php';

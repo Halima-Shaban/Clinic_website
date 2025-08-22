@@ -23,7 +23,13 @@
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container"> 
+            @if (session('success'))
+            <div class="alert alert-success text-center mt-5">
+                {{session('success')}}
+            </div>
+                
+            @endif
             <h2 class="h1 fw-bold text-center my-4">majors</h2>
             <div class="d-flex flex-wrap gap-4 justify-content-center">
                 <div class="card p-2" style="width: 18rem;">

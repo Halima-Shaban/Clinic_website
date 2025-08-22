@@ -15,7 +15,19 @@
                             href="{{url('/majors')}}">majors</a>
                         <a type="button" class="btn btn-outline-light navigation--button"
                             href="{{url('/doctors')}}">Doctors</a>
-                        <a type="button" class="btn btn-outline-light navigation--button" href="{{route('auth.login')}}">login</a>
+                  @guest('web')
+                            <a type="button" class="btn btn-outline-light navigation--button" href="{{route('auth.login')}}">login</a>
+                  @endguest
+
+                  @auth('web')
+                      <form method="POST" action="{{ route('auth.logout') }}">
+                        @csrf
+                        <input type="submit" class="btn btn-outline-light navigation--button" value="Logout">
+                      </form>
+
+                  @endauth
+
+
                     </div>
                 </div>
             </div>

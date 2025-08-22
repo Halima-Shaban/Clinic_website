@@ -10,15 +10,18 @@
                 </ol>
             </nav>
             <div class="d-flex flex-column gap-3 account-form  mx-auto mt-5">
-                <form class="form">
-
+                <form class="form" action="{{ route('auth.login.post') }}" method="post" novalidate>
+                    @csrf
                     <div class="mb-3">
                         <label class="form-label required-label" for="email">Email</label>
-                        <input type="email" class="form-control" id="email" required>
+                        <input type="email" class="form-control" name="email" id="email" required>
+                          <x-Alert key="email"/>
+
                     </div>
                     <div class="mb-3">
                         <label class="form-label required-label" for="password">password</label>
-                        <input type="password" class="form-control" id="password" required>
+                        <input type="password" name="password" class="form-control" id="password" required>
+                        <x-Alert key="password"/>
                     </div>
                     <button type="submit" class="btn btn-primary">Login</button>
                 </form>

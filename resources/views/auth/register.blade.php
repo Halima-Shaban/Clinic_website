@@ -5,12 +5,12 @@
  <div class="container">
             <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="fw-bold my-4 h4">
                 <ol class="breadcrumb justify-content-center">
-                    <li class="breadcrumb-item"><a class="text-decoration-none" href="./index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a class="text-decoration-none" href="{{ route('home')}}">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">register</li>
                 </ol>
             </nav>
             <div class="d-flex flex-column gap-3 account-form mx-auto mt-5">
-                <form class="form" novalidate action="{{ route('auth.register.post') }}" method="POST" enctype="multipart/form-data ">
+                <form class="form" novalidate action="{{ route('auth.register.post') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-items">
                         <div class="mb-3">
@@ -22,7 +22,7 @@
                         <div class="mb-3">
                             <label class="form-label required-label" for="phone">Phone</label>
                             <input type="tel" class="form-control" name="phone" id="phone" required>
-                                                      <x-Alert key="phone"/>
+                              <x-Alert key="phone"/>
 
                         </div>
                         <div class="mb-3">

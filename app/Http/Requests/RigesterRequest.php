@@ -22,6 +22,7 @@ class RigesterRequest extends FormRequest
      */
     public function rules(): array
     {
+    //    dd(request()->all());
         return [
             'name' => ["required", "string", "min:3", "max:20"],
             "email" => ["required", "email", "unique:Users,email"],
