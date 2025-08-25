@@ -12,8 +12,8 @@ Route::prefix('admin')->name('admin.')->group( function(){
     Route::get('/create', 'create')->name('create');
     Route::post('/store', 'store')->name('store');
     Route::get('/edit/{id}', 'edit')->name('edit');
-    Route::put('/update/{id}', 'update')->name('update');
-    Route::delete('/destroy/{id}', 'destroy')->name('destroy');
+    Route::put('/update/{doctor}', 'update')->name('update');
+    Route::delete('/destroy/{doctor}', 'destroy')->name('destroy');
 
     });
 

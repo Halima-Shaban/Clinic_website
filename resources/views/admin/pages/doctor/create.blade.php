@@ -1,0 +1,63 @@
+@extends('admin.layouts.master')
+
+@section('title','Edit Doctor')
+
+@section("admin_content")
+
+
+<div class="container mt-5 content-wrapper">
+    <div class="card shadow-lg border-0 rounded-3">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Add Doctor</h4>
+        </div>
+        <div class="card-body">
+            <form action="{{ route('admin.doctor.store') }}" method="POST">
+                @csrf
+
+                <div class="mb-3">
+                    <label class="form-label">Doctor Name</label>
+                    <input type="text" name="name" class="form-control" value="enter your name" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="email" name="email" class="form-control" value="enter your email" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Phone</label>
+                    <input type="text" name="phone" class="form-control" value="enter your name phone " required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Address</label>
+                    <textarea name="address" class="form-control" rows="3" required></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <div class="mb-3">
+    <label class="form-label">Major</label>
+    <select name="major_id" class="form-control" required>
+        @foreach($majors as $major)
+            <option value="{{ $major->id }}">{{ $major->name }}</option>
+        @endforeach
+    </select>
+</div>
+                </div>
+
+               
+
+                <div class="d-flex justify-content-between">
+                    <a href="{{ route('admin.doctor.index') }}" class="btn btn-secondary">
+                        Cancel
+                    </a>
+                  
+                    <button type="submit" class="btn btn-success">
+                        Add Doctor
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@endsection

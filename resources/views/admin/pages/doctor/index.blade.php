@@ -8,9 +8,9 @@
             <!-- Header Section -->
             <div class="doctors-header">
                 <h1 class="doctors-title">Doctors</h1>
-                <button class="new-doctor-btn">
+                <a href="{{route('admin.doctor.create')}}" class="new-doctor-btn">
                     New Doctor
-                </button>
+                </a>
             </div>
             
             <!-- Doctors Table Container -->
@@ -72,71 +72,13 @@
                                           @method('DELETE')
                                         @csrf
                                         <button class="action-btn btn-delete" title="Delete">
-                                        <i class="fas fa-trash"></i>
-                                        </button>
+<i class="fa-solid fa-pen-to-square"></i>                                        </button>
                                     </form>
                                 </div>
                             </td>
                         </tr>
                          @endforeach
-                        <tr>
-                            <td class="id-column">2</td>
-                            <td class="image-column">
-                                <img src="img/jose.jpg" alt="Jose King" class="doctor-image">
-                            </td>
-                            <td class="name-column">
-                                <div class="doctor-name">Jose King</div>
-                            </td>
-                            <td class="major-column">
-                                <div class="doctor-major">Surgical Technology</div>
-                            </td>
-                            <td class="phone-column">
-                                <div class="doctor-phone">1-678-616-4455</div>
-                            </td>
-                            <td class="action-column">
-                                <div class="action-buttons">
-                                    <button class="action-btn btn-view" title="View">
-                                        <i class="fas fa-eye"></i>
-                                    </button>
-                                    <button class="action-btn btn-edit" title="Edit">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <button class="action-btn btn-delete" title="Delete">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
                         
-                        
-                        <tr>
-                            <td class="id-column">9</td>
-                            <td class="image-column">
-                                <img src="img/luther.jpg" alt="Luther Schmidt" class="doctor-image">
-                            </td>
-                            <td class="name-column">
-                                <div class="doctor-name">Luther Schmidt</div>
-                            </td>
-                            <td class="major-column">
-                                <div class="doctor-major">Nursing</div>
-                            </td>
-                            <td class="phone-column">
-                                <div class="doctor-phone">847-669-3197</div>
-                            </td>
-                            <td class="action-column">
-                                <div class="action-buttons">
-                                    <button class="action-btn btn-view" title="View">
-                                        <i class="fas fa-eye"></i>
-                                    </button>
-                                    <button class="action-btn btn-edit" title="Edit">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <button class="action-btn btn-delete" title="Delete">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
