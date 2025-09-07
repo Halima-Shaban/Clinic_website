@@ -14,12 +14,19 @@ class Doctor extends Model
         'email',
         'phone',
         'address',
+        'image',
         'major_id'
         ];
 
 
     public function major(){
-        return $this->belongsTo(Major::class); 
+        return $this->belongsTo(Major::class, 'major_id'); 
+    }
+
+
+    public function imgUrl(){
+        $image=$this->image;
+        return asset("front/assets/images/doctors/" .$image);
     }
 
     

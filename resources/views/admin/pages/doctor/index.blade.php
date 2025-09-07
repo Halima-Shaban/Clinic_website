@@ -49,13 +49,13 @@
                         <tr>
                             <td class="id-column">{{$loop->iteration}}</td>
                             <td class="image-column">
-                                <img src="{{$doctor->image}}" alt="Mr. Malachi Denesik" class="doctor-image">
+                                <img src="{{$doctor->imgUrl()}}" alt="Mr. Malachi Denesik" class="doctor-image">
                             </td>
                             <td class="name-column">
                                 <div class="doctor-name">{{$doctor->name}}</div>
                             </td>
                             <td class="major-column">
-                                <div class="doctor-major">{{$doctor->major->title}}</div>
+                                <div class="doctor-major">{{$doctor->major->name}}</div>
                             </td>
                             <td class="phone-column">
                                 <div class="doctor-phone">{{$doctor->phone ?? 'N/A'}}</div>
@@ -72,7 +72,8 @@
                                           @method('DELETE')
                                         @csrf
                                         <button class="action-btn btn-delete" title="Delete">
-<i class="fa-solid fa-pen-to-square"></i>                                        </button>
+                                        <i class="fas fa-trash"></i>
+                                        </button>
                                     </form>
                                 </div>
                             </td>

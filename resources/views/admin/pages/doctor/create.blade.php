@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title','Edit Doctor')
+@section('title','Create Doctor')
 
 @section("admin_content")
 
@@ -11,38 +11,51 @@
             <h4 class="mb-0">Add Doctor</h4>
         </div>
         <div class="card-body">
-            <form action="{{ route('admin.doctor.store') }}" method="POST">
+            <form action="{{ route('admin.doctor.store') }}" method="POST" enctype="multipart/form-data" novalidate >
                 @csrf
 
                 <div class="mb-3">
                     <label class="form-label">Doctor Name</label>
-                    <input type="text" name="name" class="form-control" value="enter your name" required>
+                    <input type="text" name="name" class="form-control" value="{{old('name',$doctor->name)}}" required>
+                    <x-alert key="name"/>
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Email</label>
-                    <input type="email" name="email" class="form-control" value="enter your email" required>
+                    <input type="email" name="email" class="form-control" value="{{old('email',$doctor->email)}}" required>
+                    <x-alert key="email"/>
+
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Phone</label>
-                    <input type="text" name="phone" class="form-control" value="enter your name phone " required>
+                    <input type="text" name="phone" class="form-control" value="{{old('phone',$doctor->phone)}} " required>
+                    <x-alert key="phone"/>
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Address</label>
-                    <textarea name="address" class="form-control" rows="3" required></textarea>
+                    <input value="{{old('address',$doctor->address)}}"  name="address" class="form-control" rows="3" required>
+                    <x-alert key="address"/>
                 </div>
 
+                
                 <div class="mb-3">
-                    <div class="mb-3">
-    <label class="form-label">Major</label>
-    <select name="major_id" class="form-control" required>
-        @foreach($majors as $major)
-            <option value="{{ $major->id }}">{{ $major->name }}</option>
-        @endforeach
-    </select>
-</div>
+                    <label class="form-label">Major</label>
+                    <select name="major_id" class="form-control" required>
+                        @foreach($majors as $major)
+                            <option value="{{ $major->id }}">{{ $major->name }}</option>
+                        @endforeach
+                    </select>
+                    <x-alert key="major_id"/>
+              
+                </div>
+
+
+                 <div class="mb-3">
+                    <label class="form-label">Doctor Image</label>
+                    <input type="file" id="image" name="image" class="form-control">
+                    <x-alert key="image"/>
                 </div>
 
                

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\DoctorRequest;
+use App\Http\Requests\UpdateDoctorRequest;
 use App\Models\Doctor;
 use App\Models\Major;
 use Illuminate\Http\Request;
@@ -16,7 +17,7 @@ class AdminDoctorController extends Controller
     public function index()
     {
         //
-        $doctors =Doctor::all();
+        $doctors = Doctor::with('major')->get();
         return view('admin.pages.doctor.index', compact('doctors'));
 
     }
@@ -24,11 +25,12 @@ class AdminDoctorController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(Major $major)
+    public function create()
     {
         $majors =Major::all();
+        $doctor=new Doctor();
         // dd($majors);
-            return view('admin.pages.doctor.create',compact('majors'));
+            return view('admin.pages.doctor.create',compact('majors','doctor'));
 
     }
 
@@ -39,7 +41,19 @@ class AdminDoctorController extends Controller
     {
         //
         // dd("hallo");
-        Doctor::create ($request->validated());
+        $data = $request->validated();
+
+        if ($request->hasFile('image')) {
+         
+
+            $imageName = uploadImage($data['image'], 'doctors');
+        
+
+        }
+
+        $data['image'] = $imageName ?? 'default.jpg';
+        Doctor::create ($data);
+       
         return redirect()->route('admin.doctor.index')->with('success','Doctor Added Successfully');
 
 
@@ -56,10 +70,9 @@ class AdminDoctorController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit( Doctor $doctor)
     {
-        //
-          $doctor =Doctor::findOrFail($id);
+    
           $majors=Major::all();
          return view('admin.pages.doctor.edit', compact('doctor','majors'));
     }
@@ -67,10 +80,18 @@ class AdminDoctorController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(DoctorRequest $request ,Doctor $doctor )
+    public function update(UpdateDoctorRequest $request ,Doctor $doctor )
     {
         //  $doctor =Doctor::findOrFail($id);
-         $doctor->update($request->validated());
+         $data=$request->validated(); 
+         if ($request->hasFile('image')) {
+            # code...
+
+            $imageName=uploadImage($data['image'],'doctors');
+            $data['image']=$imageName;
+         }
+
+         $doctor->update($data);
         return redirect()->route('admin.doctor.index')->with('success','Doctor Updated Successfully');
     }
 
