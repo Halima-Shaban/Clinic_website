@@ -4,7 +4,11 @@
 
 		<!-- Font Awesome -->
 		<link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+		<!-- Splide CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+
 		<!-- Theme style -->
 		<link rel="stylesheet" href="{{ asset('front/admin/css/adminlte.min.css') }}">
 		<link rel="stylesheet" href="{{ asset('front/admin/css/custom.css') }}">
 		<link rel="stylesheet" href="{{ asset('front/admin/css/doctor.css') }}">
+		

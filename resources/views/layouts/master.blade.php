@@ -2,14 +2,14 @@
 <html lang="en">
 
 <head>
-@include('layouts.links')    
-<title>@yield('title',"clinic")</title>  
+    @include('layouts.links')
+    <title>@yield('title', 'clinic')</title>
 </head>
 
 <body>
     <div class="page-wrapper">
-       @include('layouts.navebar')
-   @yield('front.content')
+        @include('layouts.navebar')
+        @yield('front.content')
     </div>
 
 
@@ -28,12 +28,12 @@
             </div>
             <div class="col-sm order-sm-2">
                 <h1 class="h1">Links</h1>
-               @include('layouts.footerLinks')
+                @include('layouts.footerLinks')
             </div>
         </div>
     </footer>
 
-    @incloud('layouts.frontScripts')
-    </body>
+    @include('layouts.frontScripts')
+</body>
 
 </html>

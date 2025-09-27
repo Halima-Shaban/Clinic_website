@@ -23,7 +23,7 @@ class DoctorFactory extends Factory
             'email' => $this->faker->unique()->safeEmail(),
             'phone' => $this->faker->phoneNumber(),
             'address' => $this->faker->address(),
-            'image' => $this->faker->imageUrl(640, 480, 'people', true, 'doctor'),
+            'image' => "deafult.jpg",
             'major_id' => Major::get()->random()->id ,
         ];
     }

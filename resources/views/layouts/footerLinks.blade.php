@@ -4,5 +4,5 @@
                     <a href="./doctors/index.html" class="link text-white">Doctors</a>
                     <a href="./login.html" class="link text-white">Login</a>
                     <a href="./register.html" class="link text-white">Register</a>
-                    <a href="./contact.html" class="link text-white">Contact</a>
+                    <a href="{{route("contact")}}" class="link text-white">Contact</a>
                 </div>
