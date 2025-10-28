@@ -25,6 +25,7 @@ class CreateMajorRequest extends FormRequest
             //
             'name' => "required|string|max:225",
             'image' => "nullable|image|mimes:png,jpg,jpeg,svg,gif,webp|max:2048",
+            // 'slug' => "required|unique:majors,slug"
         ];
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminAppointmentController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\AdminDoctorController;
 use App\Http\Controllers\Admin\AdminMajorController;
@@ -29,5 +30,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::delete('/{id}', 'destroy')->name('destroy');
 
     });
+
+    //Appointment Crud
+    Route::resource('appointment', AdminAppointmentController::class);
+    ;
 
 });

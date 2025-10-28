@@ -49,11 +49,11 @@ class Major extends Model
     {
         $image = $this->image;
 
-        if (!file_exists(public_path($image)) || $image == null) {
+        if (!file_exists(public_path('front/assets/images/majors/' .$image)) || $image == null) {
             # code...
             return asset("front/assets/images/major.jpg");
         }
-        return asset($image);
+        return asset('front/assets/images/majors/' .$image);
     }
 
 }

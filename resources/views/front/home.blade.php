@@ -55,8 +55,8 @@
                     @foreach ($doctors as $doctor)
                         <li class="splide__slide">
                             <div class="card p-2" style="width: 18rem;">
-                                <img src="{{ $doctor->imgUrl() }}/assets/images/major.jpg"
-                                    class="card-img-top rounded-circle card-image-circle" alt="major">
+                                <img src="{{ $doctor->imgUrl() }}" class="card-img-top rounded-circle card-image-circle"
+                                    alt="major">
                                 <div class="card-body d-flex flex-column gap-1 justify-content-center">
                                     <h4 class="card-title fw-bold text-center">{{ $doctor->name }}</h4>
                                     <h6 class="card-title fw-bold text-center">{{ $doctor->major->name }}</h6>

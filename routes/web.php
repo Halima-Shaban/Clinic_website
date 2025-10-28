@@ -6,7 +6,7 @@ use App\Http\Controllers\front\AppointmentController;
 use App\Http\Controllers\front\ContactController;
 use App\Http\Controllers\front\DoctorController;
 use App\Http\Controllers\front\MajorController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\front\HomeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class,'index'])->name("home");
